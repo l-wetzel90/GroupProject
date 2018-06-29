@@ -1,0 +1,79 @@
+
+/* 
+    Created on : Jan 18, 2018, 2:44:35 PM
+    Author     : Brian Curtis
+*/
+
+.invalid {
+    color: red;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin: 10px 10px 10px 0px;
+}
+
+input[type="submit"] {
+    margin-left: 115px;
+}
+html{
+    background-color: lightgray;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+/*    width: 75%;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: white;*/
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#wrapper{
+    width: 75%;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: white;
+    
+}
+aside{
+    width: 20%;
+    float: left;
+    
+}
+main{
+    width:75%;
+    margin-left: 22%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+li {
+    padding-bottom: .5em;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.cancel {
+    margin-top: 10px;
+}

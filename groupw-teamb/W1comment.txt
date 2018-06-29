@@ -1,0 +1,6 @@
+Good work.
+
+1. For validation.php instead of counting up to the valid number of pieces of data it's often easier to just have a boolean flag, flipping the flag to false if data is INvalid, instead of ++ when you valid data. So if you add more fields to validate you won't have to change the numeric literal 4.
+https://github.com/SCCpcweb/groupw-teamb/blob/0a221029ad47366aecde492f457b5e086650a181/validation.php#L50
+
+For the 2nd version of the website I would suggest moving these into functions.

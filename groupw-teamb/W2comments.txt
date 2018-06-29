@@ -1,0 +1,35 @@
+1. On a failed login get notice: Notice: Undefined offset: 0 in C:\xampp\htdocs\groupw-teamb\database.php on line 104
+This happens if the alias doesn't exist in the DB.
+
+2. The error messages of just Invalid Email or Invalid Alias if they are already taken aren't specific enough, the user should be told that they are already in use and to choose another.
+
+3. 100 chars is too short for a image name, should be the windows limit of 255 or you risk truncation.
+
+Issues with alias requirements, you should be more restrictive about the special characters allowed. Look to this for some guidance on what characters will disrupt a windows path: https://msdn.microsoft.com/en-us/library/aa365247
+
+4. Usernames with % break the image output. I created users with aliases of %%%% and %2F..%2F any I can upload an image and see in the image in the directory but it isn't displayed on the page. Try using urlencode http://php.net/manual/en/function.urlencode.php
+
+5. Had a User alias of "C:  " and when trying to upload an image:
+( ! ) Warning: mkdir(): Permission denied in C:\xampp\htdocs\groupw-teamb\index.php on line 228
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0102	420104	{main}( )	...\index.php:0
+2	0.0186	464560	mkdir ( )	...\index.php:228
+
+( ! ) Warning: move_uploaded_file(images/C: /profileImage.jpg): failed to open stream: No such file or directory in C:\xampp\htdocs\groupw-teamb\index.php on line 231
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0102	420104	{main}( )	...\index.php:0
+2	0.0264	464712	move_uploaded_file ( )	...\index.php:231
+
+( ! ) Warning: move_uploaded_file(): Unable to move 'C:\xampp\tmp\phpC21.tmp' to 'images/C: /profileImage.jpg' in C:\xampp\htdocs\groupw-teamb\index.php on line 231
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0102	420104	{main}( )	...\index.php:0
+2	0.0264	464712	move_uploaded_file ( )	...\index.php:231
+
+( ! ) Warning: Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\groupw-teamb\index.php:231) in C:\xampp\htdocs\groupw-teamb\index.php on line 241
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0102	420104	{main}( )	...\index.php:0
+2	0.3410	464816	header ( )	...\index.php:241
